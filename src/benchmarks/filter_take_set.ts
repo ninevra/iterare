@@ -1,8 +1,10 @@
 /* tslint:disable:no-console */
 
-import * as IxES6 from '@reactivex/ix-es2015-cjs'
+import * as IxES6 from '@reactivex/ix-es2015-cjs/iterable'
+import * as IxES6Op from '@reactivex/ix-es2015-cjs/iterable/operators'
 import { Event, Suite } from 'benchmark'
-import * as IxES5 from 'ix'
+import * as IxES5 from 'ix/iterable'
+import * as IxES5Op from 'ix/iterable/operators'
 import * as _ from 'lodash'
 import 'rxjs'
 import * as Rx from 'rxjs'
@@ -75,17 +77,19 @@ suite.add('RxJS', (deferred: any) => {
 })
 
 suite.add('IxJS (ES5)', () => {
-    return IxES5.Iterable.from(hugeSet)
-        .filter((uri: string) => uri.startsWith('file://'))
-        .take(5)
-        .toSet()
+    const iter = IxES5.from(hugeSet).pipe(
+        IxES5Op.filter((uri: string) => uri.startsWith('file://')),
+        IxES5Op.take(5)
+    )
+    return IxES5.toSet(iter)
 })
 
 suite.add('IxJS (ES6)', () => {
-    return IxES6.Iterable.from(hugeSet)
-        .filter((uri: string) => uri.startsWith('file://'))
-        .take(5)
-        .toSet()
+    const iter = IxES6.from(hugeSet).pipe(
+        IxES6Op.filter((uri: string) => uri.startsWith('file://')),
+        IxES6Op.take(5)
+    )
+    return IxES6.toSet(iter)
 })
 
 suite.on('cycle', (event: Event) => {

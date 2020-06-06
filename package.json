@@ -74,14 +74,14 @@
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^8.0.0",
-    "@reactivex/ix-es2015-cjs": "^2.5.3",
+    "@reactivex/ix-es2015-cjs": "^3.0.2",
     "@types/benchmark": "^1.0.31",
     "@types/lodash": "^4.14.134",
     "@types/mocha": "^7.0.2",
-    "@types/node": "^7.10.6",
+    "@types/node": "^14.0.11",
     "benchmark": "^2.1.4",
     "husky": "^2.4.0",
-    "ix": "^2.5.3",
+    "ix": "^3.0.2",
     "lodash": "^4.17.15",
     "mocha": "^7.2.0",
     "nyc": "^14.1.1",
@@ -92,6 +92,6 @@
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.17.7",
-    "typescript": "~3.5.1"
+    "typescript": "~3.8.3"
   }
 }

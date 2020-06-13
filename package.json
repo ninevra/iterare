@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Array methods for ES6 Iterators",
   "main": "lib/index.js",
+  "exports": {
+    "import": "./esm/esm.mjs",
+    "require": "./lib/index.js"
+  },
   "typings": "lib/index.d.ts",
   "engines": {
     "node": ">=6"
@@ -19,13 +23,21 @@
   "nyc": {
     "all": true,
     "extension": [
-      ".ts"
+      ".ts",
+      ".mjs",
+      ".js"
     ],
     "include": [
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "esm/**/*.mjs",
+      "esm/**/*.js",
+      "esm/**/*.ts"
     ],
     "exclude": [
-      "src/**/*.test.ts"
+      "src/**/*.test.ts",
+      "esm/**/*.test.mjs",
+      "esm/**/*.test.js",
+      "esm/**/*.test.ts"
     ],
     "reporter": [
       "text",
@@ -33,7 +45,12 @@
     ]
   },
   "mocha": {
-    "spec": "src/**/*.test.ts",
+    "spec": [
+      "src/**/*.test.ts",
+      "esm/**/*.test.mjs",
+      "esm/**/*.test.js",
+      "esm/**/*.test.ts"
+    ],
     "require": "ts-node/register"
   },
   "husky": {

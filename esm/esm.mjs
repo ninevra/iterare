@@ -1,5 +1,5 @@
-import iterare from '../lib/index.js';
+import iterare from '../lib/index.js'
 
-const {iterate, zip} = iterare;
+const { iterate, zip } = iterare
 
-export {iterate as default, iterate, zip};
+export { iterate as default, iterate, zip }

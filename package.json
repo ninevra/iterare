@@ -13,7 +13,7 @@
   },
   "scripts": {
     "tslint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.ts'",
-    "prettier": "prettier --write --list-different '**/*.{ts,json,js,md,yml}'",
+    "prettier": "prettier --write --list-different '**/*.{ts,json,js,mjs,md,yml}'",
     "test": "nyc mocha",
     "build": "tsc",
     "watch": "tsc -w",
